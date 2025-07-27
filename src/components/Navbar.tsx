@@ -82,12 +82,12 @@ function MobileNav() {
 
                     <div className="flex flex-col space-y-4">
                                 <SheetClose asChild>
-                                    <Link to={`${import.meta.env.VITE_PRODUCTION}/auth/login`}>
+                                    <Link replace to={`${import.meta.env.VITE_PRODUCTION}/auth/login`}>
                                         <Button variant="secondary">Se connecter</Button>
                                     </Link>
                                 </SheetClose>
                                 <SheetClose asChild>
-                                    <Link to={`${import.meta.env.VITE_PRODUCTION}/auth/register`}>
+                                    <Link replace to={`${import.meta.env.VITE_PRODUCTION}/auth/register`}>
                                         <Button className={'group'}>
                                             S'inscrire
                                             <ArrowRightIcon
