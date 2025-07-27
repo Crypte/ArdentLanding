@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
-import {ArrowRightIcon, Menu} from "lucide-react"
+import { Menu} from "lucide-react"
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "./ui/sheet"
 import { FaXTwitter } from "react-icons/fa6";
 import {
@@ -36,19 +36,12 @@ export default function Navbar() {
                 <div className={'flex items-center space-x-4 max-xl:hidden'}>
                     <Button size={'icon'} variant={'ghost'}><FaXTwitter className={'w-4 h-4 max-xl:hidden'}/></Button>
                     <div className={'w-0 border h-6 border-secondary'}></div>
-                    <Link to={`${import.meta.env.VITE_PRODUCTION}/auth/login`}>
-                        <Button variant="secondary">Se connecter</Button>
-                    </Link>
-                    <Link to={`${import.meta.env.VITE_PRODUCTION}/auth/register`}>
-                        <Button className={'group'}>
-                            S'inscrire
-                            <ArrowRightIcon
-                                className="-me-1 ml-1 opacity-60 transition-transform group-hover:translate-x-0.5"
-                                size={16}
-                                aria-hidden="true"
-                            />
-                        </Button>
-                    </Link>
+                    <Button asChild variant="secondary">
+                        <a href={`${import.meta.env.VITE_PRODUCTION}/auth/login`}>Se connecter</a>
+                    </Button>
+                    <Button asChild>
+                        <a href={`${import.meta.env.VITE_PRODUCTION}/auth/register`}>S'inscrire'</a>
+                    </Button>
                 </div>
                 <MobileNav/>
             </div>
@@ -82,21 +75,14 @@ function MobileNav() {
 
                     <div className="flex flex-col space-y-4">
                                 <SheetClose asChild>
-                                    <Link replace to={`${import.meta.env.VITE_PRODUCTION}/auth/login`}>
-                                        <Button variant="secondary">Se connecter</Button>
-                                    </Link>
+                                    <Button asChild variant="secondary">
+                                        <a href={`${import.meta.env.VITE_PRODUCTION}/auth/login`}>Se connecter</a>
+                                    </Button>
                                 </SheetClose>
                                 <SheetClose asChild>
-                                    <Link replace to={`${import.meta.env.VITE_PRODUCTION}/auth/register`}>
-                                        <Button className={'group'}>
-                                            S'inscrire
-                                            <ArrowRightIcon
-                                                className="-me-1 ml-1 opacity-60 transition-transform group-hover:translate-x-0.5"
-                                                size={16}
-                                                aria-hidden="true"
-                                            />
-                                        </Button>
-                                    </Link>
+                                    <Button asChild>
+                                        <a href={`${import.meta.env.VITE_PRODUCTION}/auth/register`}>S'inscrire'</a>
+                                    </Button>
                                 </SheetClose>
                     </div>
                 </SheetContent>

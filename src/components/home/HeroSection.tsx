@@ -1,8 +1,6 @@
 import {Badge} from "@/components/ui/badge.tsx";
 import RotateHeroText from "@/components/RotateHeroText.tsx";
-import {Link} from "react-router-dom";
 import {Button} from "@/components/ui/button.tsx";
-import {ArrowRightIcon} from "lucide-react";
 
 function HeroSection() {
     return (
@@ -18,19 +16,12 @@ function HeroSection() {
                         culturel.
                     </p>
                     <div className="pt-4 space-x-4">
-                        <Link replace to={`${import.meta.env.VITE_PRODUCTION}/auth/login`}>
-                            <Button variant="secondary">Se connecter</Button>
-                        </Link>
-                        <Link replace to={`${import.meta.env.VITE_PRODUCTION}/auth/register`}>
-                            <Button className={'group'}>
-                                S'inscrire
-                                <ArrowRightIcon
-                                    className="-me-1 ml-1 opacity-60 transition-transform group-hover:translate-x-0.5"
-                                    size={16}
-                                    aria-hidden="true"
-                                />
-                            </Button>
-                        </Link>
+                        <Button asChild variant="secondary">
+                            <a href={`${import.meta.env.VITE_PRODUCTION}/auth/login`}>Se connecter</a>
+                        </Button>
+                        <Button asChild>
+                            <a href={`${import.meta.env.VITE_PRODUCTION}/auth/register`}>S'inscrire'</a>
+                        </Button>
                     </div>
                 </div>
         </section>
