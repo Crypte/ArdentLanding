@@ -6,11 +6,13 @@ import {
 } from "react-router-dom";
 import Home from "@/pages/Home.tsx";
 import NotFound from "@/pages/NotFound.tsx";
+import Navbar from "@/components/Navbar.tsx";
 
 function App() {
     return (
-        <div vaul-drawer-wrapper="" className="bg-background">
+        <div vaul-drawer-wrapper="" className="bg-background container">
             <Router>
+                    <Navbar/>
                     <AppContent/>
             </Router>
         </div>
