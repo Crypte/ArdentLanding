@@ -18,10 +18,10 @@ function HeroSection() {
                         culturel.
                     </p>
                     <div className="pt-4 space-x-4">
-                        <Link to={`${import.meta.env.VITE_PRODUCTION}/login`}>
+                        <Link to={`${import.meta.env.VITE_PRODUCTION}/auth/login`}>
                             <Button variant="secondary">Se connecter</Button>
                         </Link>
-                        <Link to={`${import.meta.env.VITE_PRODUCTION}/register`}>
+                        <Link to={`${import.meta.env.VITE_PRODUCTION}/auth/register`}>
                             <Button className={'group'}>
                                 S'inscrire
                                 <ArrowRightIcon

@@ -36,10 +36,10 @@ export default function Navbar() {
                 <div className={'flex items-center space-x-4 max-xl:hidden'}>
                     <Button size={'icon'} variant={'ghost'}><FaXTwitter className={'w-4 h-4 max-xl:hidden'}/></Button>
                     <div className={'w-0 border h-6 border-secondary'}></div>
-                    <Link to={`${import.meta.env.VITE_PRODUCTION}/login`}>
+                    <Link to={`${import.meta.env.VITE_PRODUCTION}/auth/login`}>
                         <Button variant="secondary">Se connecter</Button>
                     </Link>
-                    <Link to={`${import.meta.env.VITE_PRODUCTION}/register`}>
+                    <Link to={`${import.meta.env.VITE_PRODUCTION}/auth/register`}>
                         <Button className={'group'}>
                             S'inscrire
                             <ArrowRightIcon
@@ -82,12 +82,12 @@ function MobileNav() {
 
                     <div className="flex flex-col space-y-4">
                                 <SheetClose asChild>
-                                    <Link to={`${import.meta.env.VITE_PRODUCTION}/login`}>
+                                    <Link to={`${import.meta.env.VITE_PRODUCTION}/auth/login`}>
                                         <Button variant="secondary">Se connecter</Button>
                                     </Link>
                                 </SheetClose>
                                 <SheetClose asChild>
-                                    <Link to={`${import.meta.env.VITE_PRODUCTION}/register`}>
+                                    <Link to={`${import.meta.env.VITE_PRODUCTION}/auth/register`}>
                                         <Button className={'group'}>
                                             S'inscrire
                                             <ArrowRightIcon
