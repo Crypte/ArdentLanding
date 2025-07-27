@@ -17,10 +17,7 @@ function HeroSection() {
                     </p>
                     <div className="pt-4 space-x-4">
                         <Button asChild variant="secondary">
-                            <a href={`${import.meta.env.VITE_PRODUCTION}/auth/login`}>Se connecter</a>
-                        </Button>
-                        <Button asChild>
-                            <a href={`${import.meta.env.VITE_PRODUCTION}/auth/register`}>S'inscrire'</a>
+                            <a href={`${import.meta.env.VITE_PRODUCTION}`}>Ouvrir l'app</a>
                         </Button>
                     </div>
                 </div>

@@ -36,11 +36,8 @@ export default function Navbar() {
                 <div className={'flex items-center space-x-4 max-xl:hidden'}>
                     <Button size={'icon'} variant={'ghost'}><FaXTwitter className={'w-4 h-4 max-xl:hidden'}/></Button>
                     <div className={'w-0 border h-6 border-secondary'}></div>
-                    <Button asChild variant="secondary">
-                        <a href={`${import.meta.env.VITE_PRODUCTION}/auth/login`}>Se connecter</a>
-                    </Button>
                     <Button asChild>
-                        <a href={`${import.meta.env.VITE_PRODUCTION}/auth/register`}>S'inscrire'</a>
+                        <a href={`${import.meta.env.VITE_PRODUCTION}`}>Ouvrir l'app</a>
                     </Button>
                 </div>
                 <MobileNav/>
@@ -76,12 +73,7 @@ function MobileNav() {
                     <div className="flex flex-col space-y-4">
                                 <SheetClose asChild>
                                     <Button asChild variant="secondary">
-                                        <a href={`${import.meta.env.VITE_PRODUCTION}/auth/login`}>Se connecter</a>
-                                    </Button>
-                                </SheetClose>
-                                <SheetClose asChild>
-                                    <Button asChild>
-                                        <a href={`${import.meta.env.VITE_PRODUCTION}/auth/register`}>S'inscrire'</a>
+                                        <a href={`${import.meta.env.VITE_PRODUCTION}`}>Ouvrir l'app</a>
                                     </Button>
                                 </SheetClose>
                     </div>
