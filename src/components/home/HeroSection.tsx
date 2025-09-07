@@ -5,15 +5,14 @@ import {Link} from "react-router-dom";
 
 export default function HeroSection() {
     return (
-        <section className="h-[calc(100vh-4rem)] w-full flex flex-col items-center justify-center overflow-hidden relative">
+        <section className="h-screen w-full flex flex-col items-center justify-center overflow-hidden relative">
             <div className="max-w-3xl mx-auto text-center space-y-6 px-6">
                 <Badge variant="secondary"><img className={'h-7'} src={'/ArdentLogo.png'} alt="Ardent Logo" /></Badge>
                 <RotateHeroText />
                 <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto font-light">
-                    Cinq minutes par jour suffisent pour transformer votre esprit. Une approche discrète et profonde du savoir
-                    culturel.
+                    La plus grande base de données de savoir
                 </p>
-                
+
                 {/* Stats cards */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 max-w-2xl mx-auto">
                     <div className="border rounded-lg p-4 text-center bg-tertiary">
@@ -33,16 +32,15 @@ export default function HeroSection() {
                         <div className="text-xs text-muted-foreground">Contenu</div>
                     </div>
                 </div>
-                
                 <div className="pt-6 space-x-3">
-                    <Button asChild variant="secondary" size={'lg'}>
+                    <Button asChild  size={'lg'}>
                         <Link to={`${import.meta.env.VITE_PRODUCTION}`}>Commencer</Link>
                     </Button>
                 </div>
             </div>
 
             {/* Lien légal en bas */}
-            <div className="flex gap-3 absolute bottom-6 left-1/2 transform -translate-x-1/2">
+            <div className="flex gap-3 absolute bottom-4 left-1/2 transform -translate-x-1/2">
                 <Link 
                     to="/legal" 
                     className="text-muted-foreground text-xs hover:text-foreground transition-colors underline"
