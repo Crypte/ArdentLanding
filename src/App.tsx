@@ -6,14 +6,13 @@ import {
 } from "react-router-dom";
 import Home from "@/pages/Home.tsx";
 import NotFound from "@/pages/NotFound.tsx";
-import Navbar from "@/components/Navbar.tsx";
+import Legal from "@/pages/Legal.tsx";
 
 function App() {
     return (
-        <div vaul-drawer-wrapper="" className="bg-background container">
+        <div vaul-drawer-wrapper="" className="bg-background">
             <Router>
-                    <Navbar/>
-                    <AppContent/>
+                <AppContent/>
             </Router>
         </div>
     );
@@ -24,6 +23,7 @@ function AppContent() {
         <>
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/legal" element={<Legal />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </>

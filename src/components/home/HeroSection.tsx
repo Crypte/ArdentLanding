@@ -1,28 +1,61 @@
 import {Badge} from "@/components/ui/badge.tsx";
 import RotateHeroText from "@/components/RotateHeroText.tsx";
 import {Button} from "@/components/ui/button.tsx";
+import {Link} from "react-router-dom";
 
-function HeroSection() {
+export default function HeroSection() {
     return (
-        <section className="w-full py-24 md:py-24 relative overflow-hidden">
-                <div className="max-w-3xl mx-auto text-center space-y-4">
-                    <Badge variant="secondary">Accès gratuit temporaire</Badge>
-                    <div className="space-y-2">
-                        <RotateHeroText />
-                        <h2 className="text-tertiary text-lg md:text-xl">Devenez le plus intelligent de la pièce</h2>
+        <section className="h-[calc(100vh-4rem)] w-full flex flex-col items-center justify-center overflow-hidden relative">
+            <div className="max-w-3xl mx-auto text-center space-y-6 px-6">
+                <Badge variant="secondary">Phase 1 : Kickof Projet</Badge>
+                <RotateHeroText />
+                <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto font-light">
+                    Cinq minutes par jour suffisent pour transformer votre esprit. Une approche discrète et profonde du savoir
+                    culturel.
+                </p>
+                
+                {/* Stats cards */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 max-w-2xl mx-auto">
+                    <div className="border rounded-lg p-4 text-center bg-tertiary">
+                        <div className="text-2xl font-bold text-tertiary-foreground">2.5K</div>
+                        <div className="text-xs text-muted-foreground">Ressources</div>
                     </div>
-                    <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto font-light">
-                        Cinq minutes par jour suffisent pour transformer votre esprit. Une approche discrète et profonde du savoir
-                        culturel.
-                    </p>
-                    <div className="pt-4 space-x-4">
-                        <Button asChild variant="secondary">
-                            <a href={`${import.meta.env.VITE_PRODUCTION}`}>Ouvrir l'app</a>
-                        </Button>
+                    <div className=" border rounded-lg p-4 text-center bg-tertiary">
+                        <div className="text-2xl font-bold text-tertiary-foreground">1.2K</div>
+                        <div className="text-xs text-muted-foreground">Inscrits</div>
+                    </div>
+                    <div className="bg-tertiary border rounded-lg p-4 text-center">
+                        <div className="text-2xl font-bold text-tertiary-foreground">15</div>
+                        <div className="text-xs text-muted-foreground">Thèmes</div>
+                    </div>
+                    <div className="bg-tertiary border rounded-lg p-4 text-center">
+                        <div className="text-2xl font-bold text-tertiary-foreground">120h</div>
+                        <div className="text-xs text-muted-foreground">Contenu</div>
                     </div>
                 </div>
+                
+                <div className="pt-6 space-x-3">
+                    <Button asChild variant="secondary">
+                        <Link to={`${import.meta.env.VITE_PRODUCTION}`}>Commencer</Link>
+                    </Button>
+                </div>
+            </div>
+
+            {/* Lien légal en bas */}
+            <div className="flex gap-3 absolute bottom-6 left-1/2 transform -translate-x-1/2">
+                <Link 
+                    to="/legal" 
+                    className="text-muted-foreground text-xs hover:text-foreground transition-colors underline"
+                >
+                    Mentions légales
+                </Link>
+                <Link
+                    to="/legal"
+                    className="text-muted-foreground text-xs hover:text-foreground transition-colors underline"
+                >
+                    Nous contacter
+                </Link>
+            </div>
         </section>
     );
 }
-
-export default HeroSection;
