@@ -2,7 +2,7 @@ import {AnimatePresence, motion} from "framer-motion";
 import React from "react";
 
 export default function RotateHeroText() {
-    const words = ["Ardent", "Liberté", "Résilience"];
+    const words = ["Liberté", "Résilience", "Savoir"];
     const [index, setIndex] = React.useState(0);
 
     React.useEffect(() => {
@@ -20,7 +20,7 @@ export default function RotateHeroText() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
                 transition={{ duration: 0.5 }}
-                className="text-center font-display text-6xl font-bold drop-shadow-sm md:text-8xl"
+                className="text-center font-display text-6xl font-bold italic drop-shadow-sm md:text-8xl"
             >
                 {words[index]}
             </motion.h1>

@@ -7,7 +7,7 @@ export default function HeroSection() {
     return (
         <section className="h-[calc(100vh-4rem)] w-full flex flex-col items-center justify-center overflow-hidden relative">
             <div className="max-w-3xl mx-auto text-center space-y-6 px-6">
-                <Badge variant="secondary">Phase 1 : Kickof Projet</Badge>
+                <Badge variant="secondary"><img className={'h-7'} src={'/ArdentLogo.png'} alt="Ardent Logo" /></Badge>
                 <RotateHeroText />
                 <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto font-light">
                     Cinq minutes par jour suffisent pour transformer votre esprit. Une approche discrète et profonde du savoir
@@ -35,7 +35,7 @@ export default function HeroSection() {
                 </div>
                 
                 <div className="pt-6 space-x-3">
-                    <Button asChild variant="secondary">
+                    <Button asChild variant="secondary" size={'lg'}>
                         <Link to={`${import.meta.env.VITE_PRODUCTION}`}>Commencer</Link>
                     </Button>
                 </div>
