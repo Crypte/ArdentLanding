@@ -2,8 +2,11 @@ import {Badge} from "@/components/ui/badge.tsx";
 import RotateHeroText from "@/components/RotateHeroText.tsx";
 import {Button} from "@/components/ui/button.tsx";
 import {Link} from "react-router-dom";
+import { useStats } from "@/hooks/useStats";
 
 export default function HeroSection() {
+    const { stats, loading, error } = useStats();
+
     return (
         <section className="h-screen w-full flex flex-col items-center justify-center overflow-hidden relative">
             <div className="container text-center space-y-8">
@@ -16,19 +19,27 @@ export default function HeroSection() {
                 {/* Stats cards */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="border rounded-lg p-4 text-center bg-tertiary">
-                        <div className="text-2xl font-bold text-tertiary-foreground">50+</div>
+                        <div className="text-2xl font-bold text-tertiary-foreground">
+                            {loading || error ? "..." : stats?.total_published_resources}
+                        </div>
                         <div className="text-xs text-muted-foreground">Ressources</div>
                     </div>
                     <div className=" border rounded-lg p-4 text-center bg-tertiary">
-                        <div className="text-2xl font-bold text-tertiary-foreground">1200</div>
+                        <div className="text-2xl font-bold text-tertiary-foreground">
+                            {loading || error ? "..." : stats?.total_users_verified}
+                        </div>
                         <div className="text-xs text-muted-foreground">Inscrits</div>
                     </div>
                     <div className="bg-tertiary border rounded-lg p-4 text-center">
-                        <div className="text-2xl font-bold text-tertiary-foreground">15</div>
+                        <div className="text-2xl font-bold text-tertiary-foreground">
+                            {loading || error ? "..." : stats?.total_themes}
+                        </div>
                         <div className="text-xs text-muted-foreground">Thèmes</div>
                     </div>
                     <div className="bg-tertiary border rounded-lg p-4 text-center">
-                        <div className="text-2xl font-bold text-tertiary-foreground">120h</div>
+                        <div className="text-2xl font-bold text-tertiary-foreground">
+                            {loading || error ? "..." : `${stats?.total_hours_content}h`}
+                        </div>
                         <div className="text-xs text-muted-foreground">Contenu</div>
                     </div>
                 </div>
