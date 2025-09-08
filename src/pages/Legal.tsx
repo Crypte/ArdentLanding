@@ -1,11 +1,9 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import Navbar from "@/components/home/Navbar.tsx"
 
 export default function Legal() {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
-      <div className="space-y-8 container py-8">
+      <div className="space-y-8 py-8">
       <div className="mb-12">
         <h1 className="text-3xl font-bold mb-2">Informations légales</h1>
         <p className="text-muted-foreground">

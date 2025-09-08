@@ -1,5 +1,5 @@
 import {Badge} from "@/components/ui/badge.tsx";
-import RotateHeroText from "@/components/RotateHeroText.tsx";
+import RotateHeroText from "@/components/home/RotateHeroText.tsx";
 import {Button} from "@/components/ui/button.tsx";
 import {Link} from "react-router-dom";
 import { useStats } from "@/hooks/useStats";
