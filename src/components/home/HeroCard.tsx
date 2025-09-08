@@ -3,16 +3,24 @@ import RotateHeroText from "@/components/RotateHeroText.tsx";
 import {Button} from "@/components/ui/button.tsx";
 import {Link} from "react-router-dom";
 import { useStats } from "@/hooks/useStats";
-import {Card, CardContent, CardFooter} from "@/components/ui/card.tsx";
+import {Card, CardContent, CardFooter, CardHeader} from "@/components/ui/card.tsx";
+import {FaXTwitter} from "react-icons/fa6";
 
 export default function HeroCard() {
     const { stats, loading, error } = useStats();
 
     return (
             <Card className={'max-w-2xl mx-auto'}>
-                <CardContent className=" flex flex-col item-center space-y-10 w-full">
-                <div className={'space-y-4 text-center'}>
+                <CardHeader className={'flex justify-between items-center'}>
                     <Badge variant="secondary"><img className={'h-7'} src={'/ArdentLogo.png'} alt="Ardent Logo" /></Badge>
+                    <Button variant={'ghost'} size="sm" asChild>
+                        <Link to={'https://x.com/ardent_projet'} target={'_blank'} className={'flex items-center gap-2'}>
+                            Suivez Ardent sur <FaXTwitter />
+                        </Link>
+                    </Button>
+                </CardHeader>
+                <CardContent className=" flex flex-col item-center space-y-5 w-full">
+                <div className={'space-y-4 text-center'}>
                 <RotateHeroText />
                 <p className="text-muted-foreground font-light">
                     Accéder à la plus grande base de données de savoir
@@ -45,25 +53,14 @@ export default function HeroCard() {
                         <div className="text-xs text-muted-foreground">Contenu</div>
                     </div>
                 </div>
-                <Button asChild size={'lg'}>
-                    <Link to={`${import.meta.env.VITE_APP_URL}`}>Accéder à l'app</Link>
-                </Button>
                 </CardContent>
-                <CardFooter className={'flex items-center justify-center space-x-3'}>
-                    <Link
-                        to="/legal"
-                        className="text-muted-foreground text-xs hover:text-foreground transition-colors underline"
-                    >
-                        Informations légales
-                    </Link>
-                    <Link
-                        to="mailto:contact@ardent-projet.fr"
-                        className="text-muted-foreground text-xs hover:text-foreground transition-colors underline"
-                    >
-                        Nous contacter
-                    </Link>
+                <CardFooter>
+                    <Button asChild size={'lg'} className={'w-full'}>
+                        <Link to={`${import.meta.env.VITE_APP_URL}`}>Accéder à l'app</Link>
+                    </Button>
                 </CardFooter>
 
             </Card>
+
     );
 }
