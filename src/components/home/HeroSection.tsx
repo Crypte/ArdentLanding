@@ -44,7 +44,7 @@ export default function HeroSection() {
                     </div>
                 </div>
                 <Button asChild size={'lg'}>
-                    <Link to={`${import.meta.env.VITE_PRODUCTION}`}>Ouvrir l'application</Link>
+                    <Link to={`${import.meta.env.VITE_APP_UR}`}>Ouvrir l'application</Link>
                 </Button>
             </div>
 
