@@ -10,6 +10,7 @@ export default function HeroCard() {
     const { stats, loading, error } = useStats();
 
     return (
+        <>
             <Card className={'max-w-2xl mx-auto'}>
                 <CardHeader className={'flex justify-between items-center'}>
                     <Badge variant="secondary"><img className={'h-7'} src={'/ArdentLogo.png'} alt="Ardent Logo" /></Badge>
@@ -61,6 +62,20 @@ export default function HeroCard() {
                 </CardFooter>
 
             </Card>
-
+    <div className={'text-center space-x-3 mt-4 text-sm'}>
+        <Link
+            to="/legal"
+            className="hover:text-foreground transition-colors underline"
+        >
+            Informations légales
+        </Link>
+        <Link
+            to="mailto:contact@ardent-projet.fr"
+            className="hover:text-foreground transition-colors underline"
+        >
+            Nous contacter
+        </Link>
+    </div>
+</>
     );
 }
