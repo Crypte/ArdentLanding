@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { pb } from '../../pocketbase/pocketbase';
 
 interface Stats {
   total_users_verified: number;
@@ -18,32 +17,32 @@ export function useStats() {
     async function fetchStats() {
       try {
         setLoading(true);
+        setError(null);
         
-        // Tentative de récupération sans authentification d'abord
-        const records = await pb.collection('stats_view').getFullList();
-        console.log(records);
-        if (records.length > 0) {
-          const statsRecord = records[0];
-          setStats({
-            total_users_verified: statsRecord.total_users_verified || 0,
-            total_themes: statsRecord.total_themes || 0,
-            total_hours_content: statsRecord.total_hours_content || 0,
-            total_published_resources: statsRecord.total_published_resources || 0,
-            total_views: statsRecord.total_views || 0,
-          });
-        } else {
-          setStats({
-            total_users_verified: 0,
-            total_themes: 0,
-            total_hours_content: 0,
-            total_published_resources: 0,
-            total_views: 0,
-          });
+        // Appel vers /api/stats qui sera intercepté par le Service Worker
+        const response = await fetch('/api/stats');
+        
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
         }
+        
+        const data = await response.json();
+        
+        if (data.error) {
+          throw new Error(data.message || 'Erreur lors du chargement des stats');
+        }
+        
+        setStats({
+          total_users_verified: data.total_users_verified || 0,
+          total_themes: data.total_themes || 0,
+          total_hours_content: data.total_hours_content || 0,
+          total_published_resources: data.total_published_resources || 0,
+          total_views: data.total_views || 0,
+        });
+        
       } catch (err) {
         console.warn('Erreur lors de la récupération des stats:', err);
         setError(err instanceof Error ? err.message : 'Impossible de charger les stats');
-        // Ne pas définir de stats en cas d'erreur, garder null
       } finally {
         setLoading(false);
       }
