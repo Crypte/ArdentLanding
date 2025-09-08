@@ -12,7 +12,7 @@ export default function Navbar() {
 
                     {/* Bouton App */}
                     <Button asChild>
-                        <Link to={`${import.meta.env.VITE_PRODUCTION}`}>
+                        <Link to={`${import.meta.env.VITE_APP_UR}`}>
                             Commencer
                         </Link>
                     </Button>
