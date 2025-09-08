@@ -1,6 +1,6 @@
 // Service Worker pour cache des stats
 const CACHE_NAME = 'ardent-stats-cache-v1';
-const STATS_API_URL = `https://staging-api.ardent-projet.fr/api/collections/stats_view/records`;
+const STATS_API_URL = `https://api.ardent-projet.fr/api/collections/stats_view/records`;
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 // Installation du SW
