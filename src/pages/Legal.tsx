@@ -183,7 +183,7 @@ export default function Legal() {
                   <h3>6. Contact</h3>
                   <p>
                       Pour exercer vos droits ou pour toute question concernant cette politique,
-                      contactez-nous à : privacy@ardent-app.com
+                      contactez-nous à : contact@ardent-projet.fr
                   </p>
               </section>
           </div>

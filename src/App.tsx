@@ -25,9 +25,9 @@ function AppContent() {
             <Routes>
                 <Route element={<AppLayout/>}>
                     <Route path="/" element={<Home />} />
-                    <Route path="/legal" element={<Legal />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
+                <Route path="/legal" element={<Legal />} />
             </Routes>
         </>
     );

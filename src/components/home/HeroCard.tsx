@@ -9,9 +9,8 @@ export default function HeroCard() {
     const { stats, loading, error } = useStats();
 
     return (
-        <section className={'container'}>
-            <Card>
-                <CardContent className=" flex flex-col item-center space-y-10 w-full max-w-xl">
+            <Card className={'max-w-2xl mx-auto'}>
+                <CardContent className=" flex flex-col item-center space-y-10 w-full">
                 <div className={'space-y-4 text-center'}>
                     <Badge variant="secondary"><img className={'h-7'} src={'/ArdentLogo.png'} alt="Ardent Logo" /></Badge>
                 <RotateHeroText />
@@ -47,7 +46,7 @@ export default function HeroCard() {
                     </div>
                 </div>
                 <Button asChild size={'lg'}>
-                    <Link to={`${import.meta.env.VITE_APP_URL}`}>Ouvrir l'application</Link>
+                    <Link to={`${import.meta.env.VITE_APP_URL}`}>Accéder à l'app</Link>
                 </Button>
                 </CardContent>
                 <CardFooter className={'flex items-center justify-center space-x-3'}>
@@ -55,7 +54,7 @@ export default function HeroCard() {
                         to="/legal"
                         className="text-muted-foreground text-xs hover:text-foreground transition-colors underline"
                     >
-                        Mentions légales
+                        Informations légales
                     </Link>
                     <Link
                         to="mailto:contact@ardent-projet.fr"
@@ -66,7 +65,5 @@ export default function HeroCard() {
                 </CardFooter>
 
             </Card>
-
-        </section>
     );
 }
