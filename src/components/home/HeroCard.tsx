@@ -3,19 +3,22 @@ import RotateHeroText from "@/components/RotateHeroText.tsx";
 import {Button} from "@/components/ui/button.tsx";
 import {Link} from "react-router-dom";
 import { useStats } from "@/hooks/useStats";
+import {Card, CardContent, CardFooter} from "@/components/ui/card.tsx";
 
-export default function HeroSection() {
+export default function HeroCard() {
     const { stats, loading, error } = useStats();
 
     return (
-        <section className="h-screen w-full flex flex-col items-center justify-center overflow-hidden relative">
-            <div className="container text-center space-y-8">
-                <Badge variant="secondary"><img className={'h-7'} src={'/ArdentLogo.png'} alt="Ardent Logo" /></Badge>
+        <section className={'container'}>
+            <Card>
+                <CardContent className=" flex flex-col item-center space-y-10 w-full max-w-xl">
+                <div className={'space-y-4 text-center'}>
+                    <Badge variant="secondary"><img className={'h-7'} src={'/ArdentLogo.png'} alt="Ardent Logo" /></Badge>
                 <RotateHeroText />
-                <p className="text-muted-foreground text-lg font-light">
+                <p className="text-muted-foreground font-light">
                     Accéder à la plus grande base de données de savoir
                 </p>
-
+                </div>
                 {/* Stats cards */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="border rounded-lg p-4 text-center bg-tertiary">
@@ -44,25 +47,26 @@ export default function HeroSection() {
                     </div>
                 </div>
                 <Button asChild size={'lg'}>
-                    <Link to={`${import.meta.env.VITE_APP_UR}`}>Ouvrir l'application</Link>
+                    <Link to={`${import.meta.env.VITE_APP_URL}`}>Ouvrir l'application</Link>
                 </Button>
-            </div>
+                </CardContent>
+                <CardFooter className={'flex items-center justify-center space-x-3'}>
+                    <Link
+                        to="/legal"
+                        className="text-muted-foreground text-xs hover:text-foreground transition-colors underline"
+                    >
+                        Mentions légales
+                    </Link>
+                    <Link
+                        to="mailto:contact@ardent-projet.fr"
+                        className="text-muted-foreground text-xs hover:text-foreground transition-colors underline"
+                    >
+                        Nous contacter
+                    </Link>
+                </CardFooter>
 
-            {/* Lien légal en bas */}
-            <div className="flex gap-3 absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                <Link 
-                    to="/legal" 
-                    className="text-muted-foreground text-xs hover:text-foreground transition-colors underline"
-                >
-                    Mentions légales
-                </Link>
-                <a
-                    href="mailto:contact@ardent-projet.fr"
-                    className="text-muted-foreground text-xs hover:text-foreground transition-colors underline"
-                >
-                    Nous contacter
-                </a>
-            </div>
+            </Card>
+
         </section>
     );
 }

@@ -1,9 +1,9 @@
-import HeroSection from "@/components/home/HeroSection.tsx";
+import HeroCard from "@/components/home/HeroCard.tsx";
 
 export default function Home() {
     return (
         <main>
-            <HeroSection/>
+            <HeroCard/>
         </main>
     )
 }
