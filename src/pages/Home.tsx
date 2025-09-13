@@ -5,7 +5,7 @@ import Footer from "@/components/Footer.tsx";
 
 export default function Home() {
     return (
-        <main className="max-w-6xl mx-auto px-4 py-8 space-y-20">
+        <main className="space-y-10">
             <HeroSection />
             <WhitepaperSection />
             <SocialSection />

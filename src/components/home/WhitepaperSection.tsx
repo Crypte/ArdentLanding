@@ -1,4 +1,5 @@
 import MarkdownRenderer from "@/components/MarkdownRenderer.tsx";
+import {Card, CardContent} from "@/components/ui/card.tsx";
 
 const fallbackContent = `# Livre Blanc Ardent
 ## Révolutionner l'Accès au Savoir
@@ -11,13 +12,15 @@ L'ignorance n'est plus une option dans notre société moderne. Chaque individu 
 export default function WhitepaperSection() {
     return (
         <section>
-            <div className="bg-gradient-to-br from-card to-card/30 border rounded-2xl p-8 md:p-12 backdrop-blur-sm shadow-lg">
+            <Card>
+                <CardContent>
                 <MarkdownRenderer 
                     filePath="livre-blanc"
                     fallbackContent={fallbackContent}
                     className="prose max-w-none"
                 />
-            </div>
+                </CardContent>
+            </Card>
         </section>
     );
 }
