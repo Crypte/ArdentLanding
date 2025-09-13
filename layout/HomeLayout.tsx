@@ -1,12 +1,13 @@
 import {Outlet} from "react-router-dom"
+import Navbar from "@/components/Navbar.tsx";
 
 export default function HomeLayout() {
     return (
-        <main className={'h-screen w-screen flex flex-col items-center justify-center bg-gradient-to-br from-tertiary-foreground/05 to-tertiary-foreground/40'}>
+        <main>
+            <Navbar />
             <div className={'container'}>
-            <Outlet />
+                <Outlet />
             </div>
-
         </main>
     )
 }

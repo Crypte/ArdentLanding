@@ -29,7 +29,7 @@ function AppContent() {
                     <Route path="*" element={<NotFound />} />
                 </Route>
                 <Route element={<LegalLayout/>}>
-                <Route path="/legal" element={<Legal />} />
+                    <Route path="/legal" element={<Legal />} />
                 </Route>
             </Routes>
         </>
