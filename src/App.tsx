@@ -8,7 +8,6 @@ import Home from "@/pages/Home.tsx";
 import NotFound from "@/pages/NotFound.tsx";
 import Legal from "@/pages/Legal.tsx";
 import HomeLayout from "../layout/HomeLayout.tsx";
-import LegalLayout from "../layout/LegalLayout.tsx";
 
 function App() {
     return (
@@ -27,9 +26,8 @@ function AppContent() {
                 <Route element={<HomeLayout/>}>
                     <Route path="/" element={<Home />} />
                     <Route path="*" element={<NotFound />} />
-                </Route>
-                <Route element={<LegalLayout/>}>
-                <Route path="/legal" element={<Legal />} />
+                    <Route path="/legal" element={<Legal />} />
+
                 </Route>
             </Routes>
         </>

@@ -1,9 +1,15 @@
-import HeroCard from "@/components/home/HeroCard.tsx";
+import HeroSection from "@/components/home/HeroSection.tsx";
+import WhitepaperSection from "@/components/home/WhitepaperSection.tsx";
+import SocialSection from "@/components/home/SocialSection.tsx";
+import Footer from "@/components/Footer.tsx";
 
 export default function Home() {
     return (
-        <main>
-            <HeroCard/>
+        <main className="space-y-10">
+            <HeroSection />
+            <WhitepaperSection />
+            <SocialSection />
+            <Footer />
         </main>
     )
 }
