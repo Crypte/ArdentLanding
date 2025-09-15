@@ -1,11 +1,12 @@
 import {Outlet} from "react-router-dom"
-import Navbar from "../src/components/Navbar";
+import Navbar from "@/components/Navbar.tsx";
 
-export default function LegalLayout() {
+
+export default function ContentLayout() {
     return (
         <main>
             <Navbar />
-            <div className={'container'}>
+            <div className={'container py-6'}>
                 <Outlet />
             </div>
         </main>
