@@ -50,7 +50,7 @@ export default function HeroCard() {
                     <Link to={`${import.meta.env.VITE_APP_URL}`}>Accéder à l'app</Link>
                 </Button>
                 <Button asChild className={'w-full'} variant={'secondary'}>
-                    <Link to={`${import.meta.env.VITE_APP_URL}`}>Lire le livre blanc</Link>
+                    <Link to="/livre-blanc">Lire le livre blanc</Link>
                 </Button>
             </CardFooter>
             <Social/>
