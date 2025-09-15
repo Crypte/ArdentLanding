@@ -6,7 +6,7 @@ export default function ContentLayout() {
     return (
         <main>
             <Navbar />
-            <div className={'container py-6'}>
+            <div className={'container py-4'}>
                 <Outlet />
             </div>
         </main>

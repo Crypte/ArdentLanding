@@ -5,7 +5,7 @@ import {SiProtonmail} from "react-icons/si";
 export default function Social() {
     return (
         <div className="text-center mt-4">
-            <p className="text-sm text-muted-foreground mb-3">Nous suivre ou nous contacter :</p>
+            <p className="text-sm text-muted-foreground mb-3">Nous contacter ou nous suivre :</p>
             <div className="flex items-center justify-center space-x-4">
                 <Link
                     to="mailto:contact@ardent-projet.fr"
